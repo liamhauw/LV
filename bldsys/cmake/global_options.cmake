@@ -1,0 +1,20 @@
+if(APPLE)
+  find_package(Vulkan 1.3.216)
+  if(Vulkan_FOUND)
+    set(LV_ENABLE_PORTABILITY ON CACHE BOOL "")
+  else()
+    find_package(Vulkan 1.3.0)
+    if (Vulkan_FOUND)
+      set(LV_ENABLE_PORTABILITY ON CACHE BOOL "")
+    else()
+      message(FATAL_ERROR "fail to find vulkan")
+    endif()
+  endif()
+endif()
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "bin/${CMAKE_BUILD_TYPE}/${CMAKE_SYSTEM_PROCESSOR}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "lib/${CMAKE_BUILD_TYPE}/${CMAKE_SYSTEM_PROCESSOR}")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "lib/${CMAKE_BUILD_TYPE}/${CMAKE_SYSTEM_PROCESSOR}")
+
+

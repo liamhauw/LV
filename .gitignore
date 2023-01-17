@@ -1,0 +1,6 @@
+.vscode
+bin
+build
+spirv
+
+.DS_Store
