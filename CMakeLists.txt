@@ -6,12 +6,10 @@ project(
   LANGUAGES CXX C
 )
 
-list(APPEND CMAKE_MODULE_PATH
-  ${CMAKE_CURRENT_SOURCE_DIR}/bldsys/cmake
-)
-
-include(global_options)
-include(setup_vulkan)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "bin/${CMAKE_BUILD_TYPE}/${CMAKE_SYSTEM_PROCESSOR}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "lib/${CMAKE_BUILD_TYPE}/${CMAKE_SYSTEM_PROCESSOR}")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "lib/${CMAKE_BUILD_TYPE}/${CMAKE_SYSTEM_PROCESSOR}")
 
 add_subdirectory(third_party)
 add_subdirectory(shaders)
