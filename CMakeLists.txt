@@ -11,6 +11,7 @@ list(APPEND CMAKE_MODULE_PATH
 )
 
 include(global_options)
+include(setup_vulkan)
 
 add_subdirectory(third_party)
 add_subdirectory(shaders)
